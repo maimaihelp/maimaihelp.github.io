@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maimai技术分享</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/blog_detail.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="image/log.png" alt="">
+        <span class="title">Maimai HDD</span>
+         <!-- 使用 span 把左右两侧的元素给撑开 -->
+         <span class="spacer"></span>
+
+    </div>
+    <!-- 版心 -->
+    <div class="container">
+        <!-- 左侧区域，显示用户信息 -->
+        <div class="container-left">
+            <!-- 用户详情 -->
+            <div class="card">
+                <!-- 用户的头像 -->
+                <img src="image/head.jpg" alt="">
+                <!-- 用户名 -->
+                <h3>匿名用户</h3>
+                <!-- 其它信息 -->
+                <a href="">下载地址</a>
+                <a href="#"></a>
+                <!-- 文章分类 -->
+                <div class="counter">
+                    <span>本资源仅供学习交流
+                    <span></span>
+                </div>
+                <div class="counter">
+                    <span>
+					造成任何影响与本人无关</span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧区域，显示博客列表 -->
+        <div class="container-right">
+            <!-- 使用这个 div 来放博客内容 -->
+            <div class="blog-content">
+                <!-- 博客的标题 -->
+                <h3>MaiMaiHDD最新相关技术分享</h3>
+                <!-- 博客的日期 -->
+                <div class="date">2024-8-25 v1.0 联系方式：3586727472</div>
+                <!-- 博客的内容 -->
+                <div class="detail">
+                    <p>
+                        由于网络上没有人分享相关的hdd技术，于是我便建此网站用来分享相关的技术和方法，大部分内容来自网络搜集，感谢访问！
+                    </p>
+                    <p>
+                       1.最基础的问题类
+					   <p>
+					   如何启动游戏？---你的HDD文件夹\Package\start.bat
+                    </p>
+					<img src="https://img.picui.cn/free/2024/08/25/66cb28f11184d.png" alt="按键">
+					     <p>
+						 如何设置1pc track数量？---你的HDD文件夹\mai2.ini【或者是maimaiDX.ini】，修改max track即可
+						 </p>
+						  <p>
+						为什么我的画面有两个画面?怎么设置单独1p？---将mai2.ini的SinglePlayer=修改即可（1=1p，2=2p，0=1,2p）
+						 </p>
+                    <p>
+                        我没有摄像头显示，怎么扫码？--打开chime_emu.exe（一般的包都会自动打开这个）
+                    </p>
+					<p>
+						微信保存自己的二维码，然后扫描，复制内容并输入进chime_emu.exe，点击scan。        
+						 </p>
+						 怎么全屏，修改分辨率?---
+    修改start.bat，将-screen-fullscreen 后面的0设为1即可全屏启动，-screen-width 1500 -screen-height 1300就是分辨率的参数啦，width是宽度，height是高度。
+
+                    </p>
+                       2.进阶问题
+					   </p>
+					   为什么打完歌之后成绩不上传？---需要修改狗号（segatools.ini）里面的id，狗号可以从下载文件里获取，随便挑一个id改进去就可以
+                    </p>
+					 <p>
+                       如何修改版本号？---
+假设你现在的版本是1.40需要改到1.41
+修改Package目录中的mai2.ini在（如果没有）里面添加如下参数
+[DebugVersion]
+DebugMajorVersion = 1
+DebugMinorVersion = 41
+DebugReleaseVersion = 00
+如果已经有的话只需要把DebugMinorVersion =对应的版本
+假设你现在的版本是1.41/1.41-A需要改到1.41-B
+修改Package\Sinmai_Data\StreamingAssets\A000目录下的一个名为DataConfig.xml的文件用记事本打开它，如图
+
+改箭头所指的位置里面为1就代表1.41-A，里面为2就代表1.41-B，同理3代表C，以此类推
+
+<img src="https://img.picui.cn/free/2024/08/25/66cb2ad91d513.png" alt="">
+                    </p>
+					    <p>
+                        为什么进不去游戏？（游戏数据检查）---游戏放进D盘，或者关闭店内招募。
+                    </p>
+					<p>
+					怎么把未开放的区域弄出来---
+    打开目录中的Sinmai_Data\StreamingAssets\A000\map从最上面开始打开，依此修改<OpenEventId>里的[id]为1，如果已经为1就不用修改，如果是0或者其他一堆数字改为1即可。
+</p>
+<p>
+怎么改功能票倍率？---
+    打开目录中的Sinmai_Data\StreamingAssets\A000\ticket我以ticket000003里的Ticket.xml为例子。用记事本打开，记住倍率不能改太高5000-8000差不多，credit里面是该功能票的价格，设置为0时上机看还是需要一个币实际上不扣。
+</p>               
+<p>
+怎么没有续关按钮？---
+    请按7键盘进入test然后点c切换下一个点到游戏设置为止再点7进入按上面方法切换到续关设置再按7改为on即可，再按c切换到离开再点7回到test
+</p>
+			   </div>
+        </div>
+</body>
+</html>
